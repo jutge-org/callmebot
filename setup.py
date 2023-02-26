@@ -27,7 +27,7 @@ setup(
     setup_requires=['setuptools'],
     entry_points={
         'console_scripts': [
-            'callmebot=callmebot.cmd.main',
+            'callmebot=callmebot:cmd.main',
         ]
     },
     scripts=[

@@ -19,12 +19,24 @@ Install with `pip3 install callmebot`.
     export CALLMEBOT_WHATSAPP_APIKEY=999999
     ```
 
-3. Call the desired function (`whatsapp`|`signal`|`telegram`|) with the message to be sent:
+3. Call the desired function (`whatsapp`, `signal`, `telegram`|) with the message to be sent:
 
     ```python
     import callmebot
 
     callmebot.whatsapp('This is an important message!\nRegards.')
+    ```
+
+4. Or, use the `callmebot` command line:
+
+    ```bash
+    callmebot whatsapp 'This is an important message!\nRegards.'
+    ```
+
+    Get help with `--help`:
+
+    ```bash
+    callmebot --help
     ```
 
 ## Credits

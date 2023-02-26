@@ -10,6 +10,8 @@ setup(
     packages=['callmebot'],
     install_requires=[
         'requests',
+        'typer',
+        'rich',
     ],
     version=version,
     description='CallMeBot Python Client',
@@ -25,6 +27,7 @@ setup(
     setup_requires=['setuptools'],
     entry_points={
         'console_scripts': [
+            'callmebot=callmebot.cmd.main',
         ]
     },
     scripts=[

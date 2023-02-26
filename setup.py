@@ -12,6 +12,7 @@ setup(
         'requests',
         'typer',
         'rich',
+        'html2text',
     ],
     version=version,
     description='CallMeBot Python Client',

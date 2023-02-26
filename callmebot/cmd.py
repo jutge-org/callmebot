@@ -1,6 +1,6 @@
 import callmebot
 import typer
-import rich
+import html2text
 
 app = typer.Typer(
     help='Send a Whatsapp, Signal or Telegram text message with CallMeBot. Configuration of CallMeBot is necessary.'
@@ -17,7 +17,7 @@ def whatsapp(
 
     callmebot.whatsapp_phone = phone
     callmebot.whatsapp_apikey = apikey
-    rich.print(callmebot.whatsapp(message))
+    print(html2text.html2text(callmebot.whatsapp(message)))
 
 
 @app.command()
@@ -30,7 +30,7 @@ def signal(
 
     callmebot.signal_phone = phone
     callmebot.signal_apikey = apikey
-    print(callmebot.signal(message))
+    print(html2text.html2text(callmebot.signal(message)))
 
 
 @app.command()
@@ -41,7 +41,7 @@ def telegram(
     """Send a Telegram message with CallMeBot."""
 
     callmebot.telegram_username = username
-    print(callmebot.telegram(message))
+    print(html2text.html2text(callmebot.telegram(message)))
 
 
 def main() -> None:

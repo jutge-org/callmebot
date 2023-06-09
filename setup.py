@@ -8,6 +8,7 @@ version = '1.2.3'
 setup(
     name='callmebot',
     packages=['callmebot'],
+    package_data={"callmebot": ["__init__.pyi", "py.typed"]},
     install_requires=[
         'requests',
         'typer',

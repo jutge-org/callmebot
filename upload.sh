@@ -1,5 +1,7 @@
 #!/bin/bash
 
+pip3 install twine 
+
 echo "Current version: " `grep "version =" setup.py | awk '{print $3}'`
 
 echo -n "New version? "

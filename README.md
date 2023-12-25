@@ -18,21 +18,21 @@ Install with `pip3 install callmebot`.
 
         ```
         callmebot:
-            whatsapp_phone: 555123123123
-            whatsapp_apikey: 999999
-            signal_phone=555123123123
-            signal_apikey=999999
-            telegram_username=username
+            whatsapp_phone: '555123123123'
+            whatsapp_apikey: '999999'
+            signal_phone: '555123123123'
+            signal_apikey: '999999'
+            telegram_username: 'username'
         ```
 
     - Set environment variables for the text services you wish to use:
 
         ```bash
-        export CALLMEBOT_WHATSAPP_PHONE=555123123123
-        export CALLMEBOT_WHATSAPP_APIKEY=999999
-        export CALLMEBOT_SIGNAL_PHONE=555123123123
-        export CALLMEBOT_SIGNAL_APIKEY=999999
-        export CALLMEBOT_TELEGRAM_USERNAME=username
+        export CALLMEBOT_WHATSAPP_PHONE='555123123123'
+        export CALLMEBOT_WHATSAPP_APIKEY='999999'
+        export CALLMEBOT_SIGNAL_PHONE='555123123123'
+        export CALLMEBOT_SIGNAL_APIKEY='999999'
+        export CALLMEBOT_TELEGRAM_USERNAME='username'
         ```
 
     The tool uses the `~/.secrets/secrets.yml` file first and the environment variables as fallback. If you do not configure some text service, you cannot use it.

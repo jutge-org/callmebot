@@ -1,5 +1,7 @@
+from typing import Optional
 import requests
-from os import getenv
+import os
+import yaml
 from urllib.parse import quote
 
 
@@ -8,11 +10,25 @@ You should first configure CallMeBot as explained at https://www.callmebot.com/
 """
 
 
-whatsapp_phone = getenv('CALLMEBOT_WHATSAPP_PHONE')
-whatsapp_apikey = getenv('CALLMEBOT_WHATSAPP_APIKEY')
-signal_phone = getenv('CALLMEBOT_SIGNAL_PHONE')
-signal_apikey = getenv('CALLMEBOT_SIGNAL_APIKEY')
-telegram_username = getenv('CALLMEBOT_TELEGRAM_USERNAME')
+def get(envvar: str, entry: str) -> Optional[str]:
+    if 'callmebot' in secrets and entry in secrets['callmebot']:
+        return secrets['callmebot'][entry]
+    else:
+        return os.getenv(envvar)
+
+
+try:
+    secrets_path = os.path.expanduser("~/.secrets/secrets.yml")
+    secrets = yaml.load(open(secrets_path), Loader=yaml.Loader)
+except:
+    secrets = {}
+
+
+whatsapp_phone = get('CALLMEBOT_WHATSAPP_PHONE', 'whatsapp_phone')
+whatsapp_apikey = get('CALLMEBOT_WHATSAPP_APIKEY', 'whatsapp_apikey')
+signal_phone = get('CALLMEBOT_SIGNAL_PHONE', 'signal_phone')
+signal_apikey = get('CALLMEBOT_SIGNAL_APIKEY', 'signal_apikey')
+telegram_username = get('CALLMEBOT_TELEGRAM_USERNAME', 'telegram_username')
 
 
 def whatsapp(message: str) -> str:

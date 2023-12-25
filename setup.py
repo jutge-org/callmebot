@@ -14,6 +14,7 @@ setup(
         'typer',
         'rich',
         'html2text',
+        'pyyaml',
     ],
     version=version,
     description='CallMeBot Python Client',

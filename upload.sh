@@ -2,7 +2,7 @@
 
 rm -rf build callmebot.egg-info callmebot/__pycache__ dist
 
-pip3 install twine 
+pip3 install twine
 
 echo "Current version: " `grep "version =" setup.py | awk '{print $3}'`
 
@@ -12,7 +12,7 @@ read version
 perl -p -i -e "s/^version = .*/version = '$version'/" setup.py
 
 git commit -a -m "Release $version"
-git push 
+git push
 git tag $version -m "Release $version"
 git push origin "$version"
 

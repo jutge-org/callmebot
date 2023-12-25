@@ -15,8 +15,10 @@ def whatsapp(
 ) -> None:
     """Send a WhatsApp message with CallMeBot."""
 
-    callmebot.whatsapp_phone = phone
-    callmebot.whatsapp_apikey = apikey
+    if phone != '':
+        callmebot.whatsapp_phone = phone
+    if apikey != '':
+        callmebot.whatsapp_apikey = apikey
     print(html2text.html2text(callmebot.whatsapp(message)))
 
 
@@ -28,8 +30,10 @@ def signal(
 ) -> None:
     """Send a Signal message with CallMeBot."""
 
-    callmebot.signal_phone = phone
-    callmebot.signal_apikey = apikey
+    if phone != '':
+        callmebot.signal_phone = phone
+    if apikey != '':
+        callmebot.signal_apikey = apikey
     print(html2text.html2text(callmebot.signal(message)))
 
 
@@ -40,7 +44,8 @@ def telegram(
 ) -> None:
     """Send a Telegram message with CallMeBot."""
 
-    callmebot.telegram_username = username
+    if username != '':
+        callmebot.telegram_username = username
     print(html2text.html2text(callmebot.telegram(message)))
 
 

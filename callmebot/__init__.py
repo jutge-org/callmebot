@@ -12,7 +12,7 @@ You should first configure CallMeBot as explained at https://www.callmebot.com/
 
 def get(envvar: str, entry: str) -> Optional[str]:
     if 'callmebot' in secrets and entry in secrets['callmebot']:
-        return secrets['callmebot'][entry]
+        return str(secrets['callmebot'][entry]).strip()
     else:
         return os.getenv(envvar)
 
